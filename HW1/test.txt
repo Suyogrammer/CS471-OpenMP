@@ -1,0 +1,4 @@
+
+My 1st commit of test.txt
+We are Suyog Joshi and Aashish Dhungana.
+We are learning version control.

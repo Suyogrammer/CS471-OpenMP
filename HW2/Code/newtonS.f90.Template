@@ -1,0 +1,49 @@
+!
+! A simple example: solving an equation f(x) = 0
+! using Newton's method
+!
+! This is the template file used for the scripted version
+!
+program newton
+
+  implicit none
+  double precision :: f,fp,x,dx,dxprevious,r1,r2
+  integer :: iter
+
+  ! Here we try to find the solution to f(x) = 0
+
+   x = -0.5d0
+   iter = 0
+   dx = 100.d0
+   !dxprevious = 1000.d0
+   do while (abs(dx) > 1.0d-15)
+	f = ffun(x)
+	fp = fpfun(x)
+	dxprevious = dx
+	dx = -f/fp
+	x = x + dx
+        iter = iter + 1
+        r1 = dx/dxprevious;
+	r2 = dx/(dxprevious * dxprevious)
+	write(*,'(A18,I2.2,2(E24.16))') ' FFFF ', iter, x, dx, r1, r2
+   end do
+
+contains
+
+  double precision function ffun(x)
+   implicit none
+   double precision :: x
+
+   ffun = FFFF
+
+ end function ffun
+
+ double precision function fpfun(x)
+   implicit none
+   double precision :: x
+
+   fpfun = FPFP
+
+ end function fpfun
+
+end program newton
